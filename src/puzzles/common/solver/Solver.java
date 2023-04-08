@@ -16,7 +16,7 @@ public class Solver{
 
     public Collection<Configuration> solve(){
         queue.add(start);
-        predecessors.put(start, start);
+        predecessors.put(start, null);
         uniqueConfigs += queue.size();
         totalConfigs += predecessors.size();
         while(!queue.isEmpty()){
