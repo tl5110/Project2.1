@@ -4,16 +4,43 @@ import puzzles.common.solver.Configuration;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * The full representation of a configuration in the Strings puzzle.
+ * It takes the initial command line arguments, start and finish,
+ * and supports the Configuration methods necessary for Solver.
+ *
+ * @author Tiffany Lee
+ */
 public class StringsConfig implements Configuration {
+    /** starting string to begin transforming with */
     private final String start;
+    /** finished string */
     private final String finish;
+
+    /**
+     * Constructs the initial configuration from start and finish
+     *
+     * @param start starting string
+     * @param finish finished string
+     */
     public StringsConfig(String start, String finish){
         this.start = start;
         this.finish = finish;
     }
+
+    /**
+     * Is the current configuration a solution or not?
+     *
+     * @return true if it's a solution, false otherwise
+     */
     @Override
     public boolean isSolution() { return start.equals(finish); }
 
+    /**
+     * Get the collection of neighbors from the current one
+     *
+     * @return all neighbors
+     */
     @Override
     public Collection<Configuration> getNeighbors() {
         Collection<Configuration> neighborsList = new ArrayList<>();
@@ -37,6 +64,12 @@ public class StringsConfig implements Configuration {
         return neighborsList;
     }
 
+    /**
+     * Two strings are equal iff they have the same start and finish
+     *
+     * @param other the other object
+     * @return whether they are equal or not
+     */
     @Override
     public boolean equals(Object other) {
         if(other instanceof StringsConfig otherString){
@@ -46,11 +79,21 @@ public class StringsConfig implements Configuration {
         return false;
     }
 
+    /**
+     * Uses all the fields of the Strings and hash them together
+     *
+     * @return the hash code
+     */
     @Override
     public int hashCode() {
         return this.start.hashCode() + this.finish.hashCode();
     }
 
+    /**
+     * Displays a string representation of the Strings to standard output.
+     *
+     * @return string representation of the Strings to standard output
+     */
     @Override
     public String toString() {
         return start;

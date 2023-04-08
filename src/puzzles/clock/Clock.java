@@ -2,10 +2,21 @@ package puzzles.clock;
 
 import puzzles.common.solver.Configuration;
 import puzzles.common.solver.Solver;
-
 import java.util.Collection;
 
+/**
+ * The main program for the Clock puzzle. It is run on the command line
+ * with the number of hours the clock has (hours), the starting hour (start),
+ * and the ending hour(end)
+ *
+ * @author Tiffany Lee
+ */
 public class Clock{
+    /**
+     * The main method.
+     *
+     * @param args command line arguments (hour, start, end)
+     */
     public static void main(String[] args) {
         if (args.length < 2) {
             System.out.println(("Usage: java Clock hours start end"));

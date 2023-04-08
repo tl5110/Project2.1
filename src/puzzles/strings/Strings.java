@@ -2,10 +2,20 @@ package puzzles.strings;
 
 import puzzles.common.solver.Configuration;
 import puzzles.common.solver.Solver;
-
 import java.util.Collection;
 
+/**
+ * The main program for the Strings puzzle. It is run on the command line
+ * with the starting string (start) and the finish string (finish)
+ *
+ * @author Tiffany Lee
+ */
 public class Strings {
+    /**
+     * The main method.
+     *
+     * @param args command line arguments (start, finish)
+     */
     public static void main(String[] args) {
         if (args.length < 2) {
             System.out.println(("Usage: java Strings start finish"));
